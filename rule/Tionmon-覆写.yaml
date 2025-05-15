@@ -151,22 +151,9 @@ proxy-groups:
     - HK AUTO
     - jp
 
-  - name: emby-lx
-    type: select
-    proxies:
-      - DIRECT
-    include-all: true
-
-  - name: emby-out
-    type: select
-    proxies:
-      - DIRECT
-    include-all: true
-
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|hkalice|hkt|hinet|uk|jp
-    name: PROXY
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
     type: select
     proxies:
       - AUTO
@@ -192,11 +179,6 @@ proxy-groups:
       - SG AUTO
       - JP AUTO
       - US AUTO
-      - alice+
-      - hkt+
-      - uk+
-      - hinet+
-      - jp+
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Telegram.png
     name: Telegram
     type: select
@@ -264,8 +246,25 @@ proxy-groups:
       - SG AUTO
       - JP AUTO
       - US AUTO
+      - alice+
+      - hkt+
+      - uk+
+      - hinet+
+      - jp+
     name: GLOBAL
     type: select
+
+  - name: emby-lx
+    type: select
+    proxies:
+      - DIRECT
+    include-all: true
+
+  - name: emby-out
+    type: select
+    proxies:
+      - DIRECT
+    include-all: true
 
 rules:
   - "RULE-SET,private,DIRECT"
