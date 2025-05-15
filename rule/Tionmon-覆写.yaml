@@ -284,7 +284,7 @@ rules:
   - "RULE-SET,cn_ip,DIRECT"
   - "MATCH,PROXY"
 # t
-  - RULE-SET,tiktok,jp+
+  - DOMAIN-KEYWORD,tiktok,jp+
   - DOMAIN-KEYWORD,dmm,jp+
   - DOMAIN-KEYWORD,liustar,emby-lx
   - DOMAIN-KEYWORD,yezi.my,emby-out
