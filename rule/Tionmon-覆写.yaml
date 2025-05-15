@@ -151,9 +151,21 @@ proxy-groups:
     - HK AUTO
     - jp
 
+  - name: emby-lx
+    type: select
+    proxies:
+      - DIRECT
+    include-all: true
+
+  - name: emby-out
+    type: select
+    proxies:
+      - DIRECT
+    include-all: true
+
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|hkalice|hkt|hinet|uk|jp
     name: PROXY
     type: select
     proxies:
@@ -169,7 +181,7 @@ proxy-groups:
       - jp+
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Urltest.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|hkalice|hkt|hinet|uk|jp
     name: AUTO
     type: url-test
     interval: 300
@@ -213,35 +225,35 @@ proxy-groups:
       - jp+
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|hkalice|hkt|hinet|uk|jp
     filter: (?i)香港|Hong Kong|HK|🇭🇰
     name: HK AUTO
     type: url-test
     interval: 300
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/SG.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|hkalice|hkt|hinet|uk|jp
     filter: (?i)新加坡|Singapore|🇸🇬
     name: SG AUTO
     type: url-test
     interval: 300
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/JP.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|hkalice|hkt|hinet|uk|jp
     filter: (?i)日本|Japan|🇯🇵
     name: JP AUTO
     type: url-test
     interval: 300
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/US.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|hkalice|hkt|hinet|uk|jp
     filter: (?i)美国|USA|🇺🇸
     name: US AUTO
     type: url-test
     interval: 300
   - icon: https://testingcf.jsdelivr.net/gh/Orz-3/mini@master/Color/Global.png
     include-all: true
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|重置|hkalice|hkt|hinet|uk|jp
     proxies:
       - PROXY
       - AUTO
@@ -271,3 +283,23 @@ rules:
   - "RULE-SET,cn_domain,DIRECT"
   - "RULE-SET,cn_ip,DIRECT"
   - "MATCH,PROXY"
+# t
+  - RULE-SET,tiktok,jp+
+  - DOMAIN-KEYWORD,dmm,jp+
+  - DOMAIN-KEYWORD,liustar,emby-lx
+  - DOMAIN-KEYWORD,yezi.my,emby-out
+  - DOMAIN-KEYWORD,pcmhub,emby-out
+  - DOMAIN-KEYWORD,lemby,emby-out
+  - DOMAIN-KEYWORD,tionm,DIRECT
+  - DOMAIN-KEYWORD,175211,DIRECT
+  - DOMAIN-KEYWORD,nastt,DIRECT
+  - DOMAIN-SUFFIX,ait.lat,DIRECT
+  - DOMAIN-SUFFIX,139.com,DIRECT
+  - DOMAIN-SUFFIX,coalcloud.net,DIRECT
+  - DOMAIN-SUFFIX,ikuai8.com,DIRECT
+  - DOMAIN-SUFFIX,yxvm.com,DIRECT
+  - DOMAIN-SUFFIX,mhyidc.com,DIRECT
+  - DOMAIN-SUFFIX,alipan.com,DIRECT
+  - DOMAIN-SUFFIX,115.com,DIRECT
+  - DOMAIN-SUFFIX,52pojie.cn,DIRECT
+# t
