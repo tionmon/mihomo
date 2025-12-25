@@ -1,5 +1,5 @@
 payload:
-  - plus.younoyes.com         # 精确匹配 (DOMAIN)
-  - +.yezi.my                  # 后缀匹配 (DOMAIN-SUFFIX)
-  - +.nubebelle.vip            # 后缀匹配 (DOMAIN-SUFFIX)
-  - +.28.al                    # 后缀匹配 (DOMAIN-SUFFIX)
+  - plus.younoyes.com
+  - +.yezi.my
+  - +.nubebelle.vip
+  - +.28.al
