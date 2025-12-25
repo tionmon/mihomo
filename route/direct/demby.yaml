@@ -1,0 +1,6 @@
+payload:
+  - +.younoyes.com             # 后缀匹配 (DOMAIN-SUFFIX)
+  - DOMAIN-KEYWORD,younopro    # 关键字匹配
+  - +.qdz1.top                 # 后缀匹配 (DOMAIN-SUFFIX)
+  - IP-SUFFIX,154.17.237.145/24 # IP段匹配
+  - qd.dmit.bbql.de            # 精确匹配 (DOMAIN)

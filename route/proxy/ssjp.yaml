@@ -1,0 +1,20 @@
+payload:
+  # 日本亚马逊（日亚）
+  - +.amazon.co.jp            # 后缀匹配 (DOMAIN-SUFFIX)
+  - +.amzn.to                 # 日亚短链接可能用到
+  - +.images-amazon.com       # 日亚图片域名（海报等资源）
+
+  # Tenhow（如果你指的是明星/女优信息网站 tenhow.com 或类似）
+  - +.tenhow.com              # 后缀匹配 (DOMAIN-SUFFIX)
+  - tenhow.com                # 精确匹配 (DOMAIN)
+
+  # DMM（包括成人内容、游戏、FANZA 等）
+  - +.dmm.co.jp               # 后缀匹配 (DOMAIN-SUFFIX)
+  - +.dmm.com                 # 后缀匹配 (DOMAIN-SUFFIX)
+  - +.fanza.jp                # FANZA（原DMM成人部分）
+  - +.pic.dmm.co.jp           # DMM/FANZA 海报图片域名
+  - +.pics.dmm.co.jp          # DMM/FANZA 海报图片域名
+
+  # 如果你还想覆盖更多 DMM 相关子域（可选，可根据需要添加）
+  - +.dmm-games.co.jp         # DMM游戏相关
+  - +.dmm-extension.com       # DMM扩展相关
