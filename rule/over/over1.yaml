@@ -1,0 +1,89 @@
+proxy-providers:
+   ice:
+     url: ""
+     type: http
+     interval: 86400
+     health-check: {enable: true,url: "http://www.apple.com/library/test/success.html",interval: 300}
+     #override:
+      #additional-prefix: "[ice]"
+
++proxies:
+
+
++proxy-groups:
+  - name: emby-p
+    type: select
+    proxies:
+      - 🇺🇸 美国实验性 IEPL 专线 1
+
+  - name: S1
+    type: select
+    include-all: true
+    proxies:
+
+  - name: S2
+    type: select
+    include-all: true
+    proxies:
+
+  - name: S3
+    type: select
+    use:
+      - ice
+    proxies:
+
+  - name: BJOUT
+    type: load-balance
+    include-all: true
+#    hidden: true
+    filter: (?i)德国|英国|荷兰|法国
+    proxies: null
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    strategy: round-robin
+
+# 定义一个公共模板 (锚点 &p)
+common-provider: &p
+  type: http
+  format: mrs
+  behavior: domain
+  interval: 86400
+  # path 字段可以省略，内核会自动根据 name 生成
+
+rule-providers:
+  category-ai-chat-!cn:
+    <<: *p  # 引用模板
+    url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs"
+
+  pemby:
+    <<: *p
+    url: "https://gh-proxy.com/https://raw.githubusercontent.com/tionmon/mihomo/refs/heads/main/route/proxy/pemby.mrs"
+
+  demby:
+    <<: *p
+    url: "https://gh-proxy.com/https://raw.githubusercontent.com/tionmon/mihomo/refs/heads/main/route/direct/demby.mrs"
+
+  ssjp:
+    <<: *p
+    url: "https://gh-proxy.com/https://raw.githubusercontent.com/tionmon/mihomo/refs/heads/main/route/proxy/ssjp.mrs"
+
+  sslx:
+    <<: *p
+    url: "https://gh-proxy.com/https://raw.githubusercontent.com/tionmon/mihomo/refs/heads/main/route/proxy/sslx.mrs"
+
+  javdb:
+    <<: *p
+    url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/javdb.mrs"
+
+  javbus:
+    <<: *p
+    url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/javbus.mrs"
+
++rules:
+  - RULE-SET,category-ai-chat-!cn,JP.MK
+  - RULE-SET,javdb,BJOUT
+  - RULE-SET,javbus,BJOUT
+  - RULE-SET,ssjp,JP.MK
+  - RULE-SET,sslx,JP
+  - RULE-SET,pemby,emby-p
+  - RULE-SET,demby,DIRECT
