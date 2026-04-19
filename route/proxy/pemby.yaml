@@ -1,4 +1,4 @@
 payload:
-  - plus.younoyes.com
-  - +.lyezi.xyz
-  - +.28.al
+  - DOMAIN,plus.younoyes.com
+  - DOMAIN-SUFFIX,lyezi.xyz
+  - DOMAIN-SUFFIX,28.al
